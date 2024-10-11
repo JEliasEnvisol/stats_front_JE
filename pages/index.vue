@@ -89,6 +89,7 @@ function goFunc() {
 let nom_elem = ref("");
 let nom_classifier = ref("");
 let img_swarplot = ref("")
+watch(img_swarplot, () => {console.log("hello new img?")})
 async function post_swarplot() {
   console.log("ACP !!!", data_csv[0]);
   // let datframe_json = data_csv.map(row => { return Object.fromEntries(Object.entries(row).filter(([k, v]) => Object.values([nom_elem, nom_classifier].values).includes(k))) });
@@ -101,7 +102,7 @@ async function post_swarplot() {
     // img_swarplot = response
     console.log("104 response", response);
     console.log("104 response", response._data["fig"]);
-    img_swarplot = response._data["fig"];
+    img_swarplot.value = response._data["fig"];
     },
     onResponseError({ request, response, options }) {
       // Handle the response errors
