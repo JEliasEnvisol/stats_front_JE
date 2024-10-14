@@ -13,8 +13,8 @@ export default NuxtAuthHandler({
         Auth0Provider.default({
             clientId: "YAGMpxY60RnwOKqeLE7zRjUkVXTcJei0",
             clientSecret: "NVsy2LYv-3nsbkYUBnkFNi0I6cRITrxu55VtekwLa8woUAHakD8RNcObbM5DNI4X",
-            issuer: "https://dev-awygn187tfj6adoj.eu.auth0.com/",
-            wellKnown: `https://dev-awygn187tfj6adoj.eu.auth0.com/.well-known/openid-configuration`
+            issuer: "https://dev-awygn187tfj6adoj.eu.auth0.com/",    // this must be the full url (with https://)
+            wellKnown: `https://dev-awygn187tfj6adoj.eu.auth0.com/.well-known/openid-configuration`   // this is necessary for some obscure reason https://github.com/nextauthjs/next-auth/issues/7591
           })
     ],
     // callbacks: {
