@@ -30,7 +30,9 @@
   <v-select v-model="nom_elem" :items="colonnes" label="Élément à analyser"> </v-select>
   <v-select v-model="nom_classifier" :items="colonnes" label="Catégorie à analyser"> </v-select>
   <v-btn color="success" @click="post_swarplot">Swarmplot !</v-btn>
-  <img v-bind:src="`data:image/jpg;base64,${img_swarplot}`" />
+  <div v-if="img_swarplot != ''">
+    <img v-bind:src="`data:image/jpg;base64,${img_swarplot}`" />
+  </div>
 </template>
 
 <script setup lang="ts">
